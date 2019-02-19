@@ -48,7 +48,7 @@ There are no dependencies! :-)
 
 Support for implementation-defined system registers is not available yet.
 
-There is no Hex-Rays support for `MCRR/MRCC` as this is an IDA Pro limitation.
+There is no Hex-Rays support for `MCRR/MRRC` as this is an IDA Pro limitation.
 
 ## Credits
 

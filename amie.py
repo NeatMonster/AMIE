@@ -32,16 +32,19 @@ class Arch(object):
         with open(os.path.join(cur_path, file_name), "r") as fd:
             self.data = json.loads(fd.read())
 
-        self.regs = {}
-        self.regs.update(self.data["registers"]["base"])
-        self.regs.update(self.data["registers"]["instructions"])
-        self.regs.update(self.data["registers"]["registers"])
-        self.regs_enc = self.data["registers"]["encodings"]
+        self.regs, self.regs_enc = {}, {}
+        for regs_group, regs in self.data["registers"].items():
+            if regs_group == "encodings":
+                self.regs_enc = regs
+            else:
+                self.regs.update(regs)
 
-        self.insns = {}
-        self.insns.update(self.data["instructions"]["base"])
-        self.insns.update(self.data["instructions"]["simd_fp"])
-        self.insns_enc = self.data["instructions"]["encodings"]
+        self.insns, self.insns_enc = {}, {}
+        for insns_group, insns in self.data["instructions"].items():
+            if insns_group == "encodings":
+                self.insns_enc = insns
+            else:
+                self.insns.update(insns)
 
     def matches(self, op, reg_op):
         op = "{:0{size}b}".format(op, size=len(reg_op))[: len(reg_op)]
@@ -78,7 +81,7 @@ class Arch(object):
         print("[AMIE] %s encoding not found for: %s" % (enc_type, insn_mne))
 
     def output(self, outctx):
-        raise NotImplemented()
+        raise False
 
     def hint(self, ea, tag, val):
         val = val.strip()
@@ -103,16 +106,15 @@ class Arch(object):
                 if ida_segregs.get_sreg(ea, 20) > 0:
                     enc_type = "T32"
 
-            insn_enc = self.find_insn_enc(
-                enc_type, insn_bs, insn.get_canon_mnem()
-            )
+            insn_enc = enc_type, insn_bs, insn.get_canon_mnem()
+            insn_enc = self.find_insn_enc(*insn_enc)
             if not insn_enc:
                 return
             insn_name, tmpl_name = insn_enc
             insn = self.insns[insn_name]
 
             desc = insn["authored"]
-            if tmpl_name in insn["templates"]:
+            if tmpl_name and tmpl_name in insn["templates"]:
                 desc += "\n\n" + "\n".join(insn["templates"][tmpl_name])
             return insn["heading"], desc
 
@@ -194,7 +196,7 @@ class AArch64(Arch):
 
         ops = [op0, op1, crn, crm, op2]
         gp_reg = ida_idp.ph.regnames[xt]
-        cp_reg = self.find_reg_enc("MRS|MSR", ops)
+        cp_reg = self.find_reg_enc("MSR|MRS", ops)
         return cp_reg, gp_reg
 
     def output(self, outctx):
@@ -248,7 +250,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
     help = ""
     wanted_name = "AMIE"
     wanted_hotkey = ""
-    version = "0.8.5"
+    version = "0.8.6"
 
     @staticmethod
     def extract_item(viewer, stripped=False):
@@ -285,7 +287,8 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
         def tag_append(s, t):
             return ida_lines.SCOLOR_ON + t + s + ida_lines.SCOLOR_OFF + t
 
-        text = " " + tag_append(title, ida_lines.SCOLOR_LOCNAME)
+        text = " " + "\n ".join([tag_append(line, ida_lines.SCOLOR_LOCNAME)
+                                 for line in title.split("\n")])
         if content:
             text += "\n"
             for line in content.split("\n"):
@@ -297,19 +300,9 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
         ida_kernwin.UI_Hooks.__init__(self)
         self.hexrays_support = False
 
-        info = ida_idaapi.get_inf_structure()
-        if info.procName == "ARM":
-            if info.is_64bit():
-                print("[AMIE] Using AArch64 architecture")
-                self.arch = AArch64()
-            else:
-                print("[AMIE] Using AArch32 architecture")
-                self.arch = AArch32()
-        else:
-            self.arch = None
-
     def init(self):
-        if not self.arch:
+        info = ida_idaapi.get_inf_structure()
+        if info.procName != "ARM":
             return ida_idaapi.PLUGIN_SKIP
 
         ida_kernwin.UI_Hooks.hook(self)
@@ -327,6 +320,15 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
 
     def run(self, _):
         return False
+
+    def database_inited(self, *_):
+        info = ida_idaapi.get_inf_structure()
+        if info.is_64bit():
+            print("[AMIE] Using AArch64 architecture")
+            self.arch = AArch64()
+        else:
+            print("[AMIE] Using AArch32 architecture")
+            self.arch = AArch32()
 
     def plugin_loaded(self, plugin_info):
         if plugin_info.name == "Hex-Rays Decompiler":
