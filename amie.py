@@ -18,11 +18,11 @@ import ida_ua
 class Arch(object):
     @staticmethod
     def output_insn(outctx, mne, dst_reg, src_reg=None):
-        outctx.out_custom_mnem(mne.upper().encode("utf-8"), 16)
-        outctx.out_register(dst_reg.encode("utf-8"))
+        outctx.out_custom_mnem(mne.upper(), 16)
+        outctx.out_register(dst_reg)
         if src_reg:
             outctx.out_printf(", ")
-            outctx.out_register(src_reg.encode("utf-8"))
+            outctx.out_register(src_reg)
         outctx.flush_outbuf()
         return True
 
@@ -47,9 +47,9 @@ class Arch(object):
                 self.insns.update(insns)
 
     def matches(self, op, reg_op):
-        op = "{:0{size}b}".format(op, size=len(reg_op))[: len(reg_op)]
-        for i in range(len(op)):
-            if op[i] != reg_op[i] and reg_op[i] != "x":
+        op_str = "{:0{size}b}".format(op, size=len(reg_op))[: len(reg_op)]
+        for i in range(len(op_str)):
+            if op_str[i] != reg_op[i] and reg_op[i] != "x":
                 return False
         return True
 
@@ -216,8 +216,8 @@ class AArch64(Arch):
                 fields = {5: "SPSel", 6: "DAIFSet", 7: "DAIFClr"}
                 pstatefield = fields.get(insn.ops[0].value, None)
                 if pstatefield:
-                    outctx.out_custom_mnem(mne.upper().encode("utf-8"), 16)
-                    outctx.out_register(pstatefield.encode("utf-8"))
+                    outctx.out_custom_mnem(mne.upper(), 16)
+                    outctx.out_register(pstatefield)
                     outctx.out_printf(", ")
                     imm = ida_ua.print_operand(insn.ea, 1)
                     outctx.out_printf(imm)
@@ -293,7 +293,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
             text += "\n"
             for line in content.split("\n"):
                 text += "\n " + tag_append(line, ida_lines.SCOLOR_AUTOCMT)
-        return text.encode("utf-8"), len(text.split("\n"))
+        return text, len(text.split("\n"))
 
     def __init__(self):
         ida_idp.IDP_Hooks.__init__(self)
@@ -378,7 +378,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
                     def make_reg(cp_reg):
                         reg = ida_hexrays.carg_t()
                         reg.op = ida_hexrays.cot_helper
-                        reg.helper = cp_reg.encode("utf-8")
+                        reg.helper = cp_reg
                         reg.exflags = ida_hexrays.EXFL_ALONE
                         return reg
 
