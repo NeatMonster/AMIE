@@ -96,8 +96,8 @@ class Arch(object):
             return None
 
         if tag == ida_lines.SCOLOR_REG:
-            if val in self.regs:
-                register = self.regs[val]
+            if val.split(".")[0] in self.regs:
+                register = self.regs[val.split(".")[0]]
                 return register["long_name"], register["purpose"]
 
         elif tag == ida_lines.SCOLOR_INSN:
