@@ -17,7 +17,6 @@ import ida_ua
 
 
 class Arch(object):
-
     @staticmethod
     def encode2(s):
         return s.encode('utf-8')
