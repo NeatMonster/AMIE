@@ -17,10 +17,13 @@ import ida_ua
 
 
 class Arch(object):
+
     @staticmethod
-    def encode(s):
-        if sys.version_info[0] < 3:
-            return s.encode("utf-8")
+    def encode2(s):
+        return s.encode('utf-8')
+
+    @staticmethod
+    def encode3(s):
         return s
 
     @staticmethod
@@ -34,6 +37,12 @@ class Arch(object):
         return True
 
     def __init__(self, file_name):
+        # Init the encoding method, depending on current version of python
+        if sys.version_info[0] < 3:
+            Arch.encode = Arch.encode2
+        else:
+            Arch.encode = Arch.encode3
+
         cur_file = inspect.getsourcefile(lambda: 0)
         cur_path = os.path.dirname(os.path.abspath(cur_file))
         with open(os.path.join(cur_path, file_name), "r") as fd:
