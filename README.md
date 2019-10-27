@@ -36,9 +36,9 @@ Copy the plugin file `amie.py`, and its resource files `aarch32.json` and `aarch
 
 OS      | Plugins Directory                          | User Plugins Directory
 --------|--------------------------------------------|-------------------------------------
-Windows | `%PROGRAMFILES%\IDA 7.2\plugins`           | `%APPDATA%\Hex-Rays\IDA Pro\plugins`
-Linux   | `~/ida-7.2/plugins`                        | `~/.idapro/plugins`
-macOS   | `/Applications/IDA Pro 7.2/idabin/plugins` | `~/.idapro/plugins`
+Windows | `%PROGRAMFILES%\IDA 7.4\plugins`           | `%APPDATA%\Hex-Rays\IDA Pro\plugins`
+Linux   | `~/ida-7.4/plugins`                        | `~/.idapro/plugins`
+macOS   | `/Applications/IDA Pro 7.4/idabin/plugins` | `~/.idapro/plugins`
 
 ## Dependencies
 

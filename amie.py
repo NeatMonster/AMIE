@@ -18,26 +18,32 @@ import ida_ua
 
 class Arch(object):
     @staticmethod
-    def encode(s):
-        if sys.version_info[0] < 3:
-            return s.encode("utf-8")
-        return s
-
-    @staticmethod
     def output_insn(outctx, mne, dst_reg, src_reg=None):
-        outctx.out_custom_mnem(Arch.encode(mne.upper()), 16)
-        outctx.out_register(Arch.encode(dst_reg))
+        outctx.out_custom_mnem(mne.upper(), 16)
+        outctx.out_register(dst_reg)
         if src_reg:
             outctx.out_printf(", ")
-            outctx.out_register(Arch.encode(src_reg))
+            outctx.out_register(src_reg)
         outctx.flush_outbuf()
         return True
 
     def __init__(self, file_name):
         cur_file = inspect.getsourcefile(lambda: 0)
         cur_path = os.path.dirname(os.path.abspath(cur_file))
+
+        def unicode_to_str(data):
+            if isinstance(data, unicode):
+                return data.encode("utf-8")
+            if isinstance(data, list):
+                return [unicode_to_str(item) for item in data]
+            if isinstance(data, dict):
+                return {unicode_to_str(key): unicode_to_str(value)
+                        for key, value in data.iteritems()}
+            return data
+
         with open(os.path.join(cur_path, file_name), "r") as fd:
-            self.data = json.loads(fd.read())
+            hook = unicode_to_str if sys.version_info[0] < 3 else None
+            self.data = json.loads(fd.read(), object_hook=hook)
 
         self.regs, self.regs_enc = {}, {}
         for regs_group, regs in self.data["registers"].items():
@@ -223,8 +229,8 @@ class AArch64(Arch):
                 fields = {5: "SPSel", 6: "DAIFSet", 7: "DAIFClr"}
                 pstatefield = fields.get(insn.ops[0].value, None)
                 if pstatefield:
-                    outctx.out_custom_mnem(Arch.encode(mne.upper()), 16)
-                    outctx.out_register(Arch.encode(pstatefield))
+                    outctx.out_custom_mnem(mne.upper(), 16)
+                    outctx.out_register(pstatefield)
                     outctx.out_printf(", ")
                     imm = ida_ua.print_operand(insn.ea, 1)
                     outctx.out_printf(imm)
@@ -300,7 +306,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
             text += "\n"
             for line in content.split("\n"):
                 text += "\n " + tag_append(line, ida_lines.SCOLOR_AUTOCMT)
-        return Arch.encode(text), len(text.split("\n"))
+        return text, len(text.split("\n"))
 
     def __init__(self):
         ida_idp.IDP_Hooks.__init__(self)
@@ -385,7 +391,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
                     def make_reg(cp_reg):
                         reg = ida_hexrays.carg_t()
                         reg.op = ida_hexrays.cot_helper
-                        reg.helper = Arch.encode(cp_reg)
+                        reg.helper = cp_reg
                         reg.exflags = ida_hexrays.EXFL_ALONE
                         return reg
 
