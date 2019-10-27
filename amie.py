@@ -31,13 +31,13 @@ class Arch(object):
         cur_file = inspect.getsourcefile(lambda: 0)
         cur_path = os.path.dirname(os.path.abspath(cur_file))
 
-        def unicode_to_str(data):
+        def unicode_to_str(data, ignore_dicts=False):
             if isinstance(data, unicode):
                 return data.encode("utf-8")
             if isinstance(data, list):
-                return [unicode_to_str(item) for item in data]
-            if isinstance(data, dict):
-                return {unicode_to_str(key): unicode_to_str(value)
+                return [unicode_to_str(item, True) for item in data]
+            if isinstance(data, dict) and not ignore_dicts:
+                return {unicode_to_str(key): unicode_to_str(value, True)
                         for key, value in data.iteritems()}
             return data
 
