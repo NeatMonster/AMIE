@@ -12053,7 +12053,6 @@
         "FPSR": ["11", "011", "0100", "0100", "001"],
         "GCR_EL1": ["11", "000", "0001", "0000", "110"],
         "GMID_EL1": ["11", "001", "0000", "0000", "100"],
-        "HACR_EL2": ["11", "100", "0001", "0001", "111"],
         "HAFGRTR_EL2": ["11", "100", "0011", "0001", "110"],
         "HCR_EL2": ["11", "100", "0001", "0001", "000"],
         "HDFGRTR_EL2": ["11", "100", "0011", "0001", "100"],
@@ -12229,6 +12228,212 @@
         "RVBAR_EL1": ["11", "000", "1100", "0000", "001"],
         "RVBAR_EL2": ["11", "100", "1100", "0000", "001"],
         "RVBAR_EL3": ["11", "110", "1100", "0000", "001"],
+        "HID0_EL1": ["11", "000", "1111", "0000", "000"],
+        "EHID0_EL1": ["11", "000", "1111", "0000", "001"],
+        "HID1_EL1": ["11", "000", "1111", "0001", "000"],
+        "EHID1_EL1": ["11", "000", "1111", "0001", "001"],
+        "HID2_EL1": ["11", "000", "1111", "0010", "000"],
+        "EHID2_EL1": ["11", "000", "1111", "0010", "001"],
+        "HID3_EL1": ["11", "000", "1111", "0011", "000"],
+        "EHID3_EL1": ["11", "000", "1111", "0011", "001"],
+        "HID4_EL1": ["11", "000", "1111", "0100", "000"],
+        "EHID4_EL1": ["11", "000", "1111", "0100", "001"],
+        "HID5_EL1": ["11", "000", "1111", "0101", "000"],
+        "EHID5_EL1": ["11", "000", "1111", "0101", "001"],
+        "HID6_EL1": ["11", "000", "1111", "0110", "000"],
+        "HID7_EL1": ["11", "000", "1111", "0111", "000"],
+        "EHID7_EL1": ["11", "000", "1111", "0111", "001"],
+        "HID8_EL1": ["11", "000", "1111", "1000", "000"],
+        "HID9_EL1": ["11", "000", "1111", "1001", "000"],
+        "EHID9_EL1": ["11", "000", "1111", "1001", "001"],
+        "HID10_EL1": ["11", "000", "1111", "1010", "000"],
+        "EHID10_EL1": ["11", "000", "1111", "1010", "001"],
+        "HID11_EL1": ["11", "000", "1111", "1011", "000"],
+        "EHID11_EL1": ["11", "000", "1111", "1011", "001"],
+        "HID13_EL1": ["11", "000", "1111", "1110", "000"],
+        "HID14_EL1": ["11", "000", "1111", "1111", "000"],
+        "HID16_EL1": ["11", "000", "1111", "1111", "010"],
+        "HID17_EL1": ["11", "000", "1111", "1111", "101"],
+        "HID18_EL1": ["11", "000", "1111", "1011", "010"],
+        "EHID20_EL1": ["11", "000", "1111", "0001", "010"],
+        "HID21_EL1": ["11", "000", "1111", "0001", "011"],
+        "PMCR0_EL1": ["11", "001", "1111", "0000", "000"],
+        "PMCR1_EL1": ["11", "001", "1111", "0001", "000"],
+        "PMCR2_EL1": ["11", "001", "1111", "0010", "000"],
+        "PMCR3_EL1": ["11", "001", "1111", "0011", "000"],
+        "PMCR4_EL1": ["11", "001", "1111", "0100", "000"],
+        "PMESR0_EL1": ["11", "001", "1111", "0101", "000"],
+        "PMESR1_EL1": ["11", "001", "1111", "0110", "000"],
+        "PMSR_EL1": ["11", "001", "1111", "1101", "000"],
+        "PMC0_EL1": ["11", "010", "1111", "0000", "000"],
+        "PMC1_EL1": ["11", "010", "1111", "0001", "000"],
+        "PMC2_EL1": ["11", "010", "1111", "0010", "000"],
+        "PMC3_EL1": ["11", "010", "1111", "0011", "000"],
+        "PMC4_EL1": ["11", "010", "1111", "0100", "000"],
+        "PMC5_EL1": ["11", "010", "1111", "0101", "000"],
+        "PMC6_EL1": ["11", "010", "1111", "0110", "000"],
+        "PMC7_EL1": ["11", "010", "1111", "0111", "000"],
+        "PMC8_EL1": ["11", "010", "1111", "1001", "000"],
+        "PMC9_EL1": ["11", "010", "1111", "1010", "000"],
+        "LSU_ERR_STS_EL1": ["11", "011", "1111", "0000", "000"],
+        "E_LSU_ERR_STS_EL1": ["11", "011", "1111", "0010", "000"],
+        "LSU_ERR_CTL_EL1": ["11", "011", "1111", "0001", "000"],
+        "L2C_ERR_STS_EL1": ["11", "011", "1111", "1000", "000"],
+        "L2C_ERR_ADR_EL1": ["11", "011", "1111", "1001", "000"],
+        "L2C_ERR_INF_EL1": ["11", "011", "1111", "1010", "000"],
+        "FED_ERR_STS_EL1": ["11", "100", "1111", "0000", "000"],
+        "E_FED_ERR_STS_EL1": ["11", "100", "1111", "0000", "010"],
+        "APCTL_EL1": ["11", "100", "1111", "0000", "100"],
+        "KERNELKEYLO_EL1": ["11", "100", "1111", "0001", "000"],
+        "KERNELKEYHI_EL1": ["11", "100", "1111", "0001", "001"],
+        "VMSA_LOCK_EL1": ["11", "100", "1111", "0001", "010"],
+        "AMX_CTL_EL1": ["11", "100", "1111", "0001", "100"],
+        "APRR_EL0": ["11", "100", "1111", "0010", "000"],
+        "APRR_EL1": ["11", "100", "1111", "0010", "001"],
+        "CTRR_LOCK_EL1": ["11", "100", "1111", "0010", "010"],
+        "CTRR_A_LWR_EL1": ["11", "100", "1111", "0010", "011"],
+        "CTRR_A_UPR_EL1": ["11", "100", "1111", "0010", "100"],
+        "CTRR_CTL_EL1": ["11", "100", "1111", "0010", "101"],
+        "APRR_JIT_ENABLE_EL2": ["11", "100", "1111", "0010", "110"],
+        "APRR_JIT_MASK_EL2": ["11", "100", "1111", "0010", "111"],
+        "AMX_CTL_EL12": ["11", "100", "1111", "0100", "110"],
+        "AMX_CTL_EL2": ["11", "100", "1111", "0100", "111"],
+        "SPRR_PERM_EL20_SILLY_THING": ["11", "100", "1111", "0101", "001"],
+        "SPRR_PERM_EL02": ["11", "100", "1111", "0101", "010"],
+        "SPRR_UMASK0_EL2": ["11", "100", "1111", "0111", "000"],
+        "SPRR_UMASK1_EL2": ["11", "100", "1111", "0111", "001"],
+        "SPRR_UMASK2_EL2": ["11", "100", "1111", "0111", "010"],
+        "SPRR_UMASK3_EL2": ["11", "100", "1111", "0111", "011"],
+        "SPRR_UMASK0_EL12": ["11", "100", "1111", "1000", "000"],
+        "SPRR_UMASK1_EL12": ["11", "100", "1111", "1000", "001"],
+        "SPRR_UMASK2_EL12": ["11", "100", "1111", "1000", "010"],
+        "SPRR_UMASK3_EL12": ["11", "100", "1111", "1000", "011"],
+        "CNTPCT_ALIAS_EL0": ["11", "100", "1111", "1010", "101"],
+        "CNTVCT_ALIAS_EL0": ["11", "100", "1111", "1010", "110"],
+        "CTRR_A_LWR_EL2": ["11", "100", "1111", "1011", "000"],
+        "CTRR_A_UPR_EL2": ["11", "100", "1111", "1011", "001"],
+        "CTRR_CTL_EL2": ["11", "100", "1111", "1011", "100"],
+        "CTRR_LOCK_EL2": ["11", "100", "1111", "1011", "101"],
+        "IPI_RR_LOCAL_EL1": ["11", "101", "1111", "0000", "000"],
+        "IPI_RR_GLOBAL_EL1": ["11", "101", "1111", "0000", "001"],
+        "DPC_ERR_STS_EL1": ["11", "101", "1111", "0000", "101"],
+        "IPI_SR_EL1": ["11", "101", "1111", "0001", "001"],
+        "VM_TMR_LR_EL2": ["11", "101", "1111", "0001", "010"],
+        "VM_TMR_FIQ_ENA_EL2": ["11", "101", "1111", "0001", "011"],
+        "IPI_CR_EL1": ["11", "101", "1111", "0011", "001"],
+        "ACC_CFG_EL1": ["11", "101", "1111", "0100", "000"],
+        "CYC_OVRD_EL1": ["11", "101", "1111", "0101", "000"],
+        "ACC_OVRD_EL1": ["11", "101", "1111", "0110", "000"],
+        "ACC_EBLK_OVRD_EL1": ["11", "101", "1111", "0110", "001"],
+        "MMU_ERR_STS_EL1": ["11", "110", "1111", "0000", "000"],
+        "AFSR1_GL1": ["11", "110", "1111", "0000", "001"],
+        "AFSR1_GL2": ["11", "110", "1111", "0000", "010"],
+        "AFSR1_GL12": ["11", "110", "1111", "0000", "011"],
+        "SPRR_CONFIG_EL1": ["11", "110", "1111", "0001", "000"],
+        "GXF_CONFIG_EL1": ["11", "110", "1111", "0001", "010"],
+        "SPRR_UNK1_EL1": ["11", "110", "1111", "0001", "011"],
+        "GXF_CONFIG_EL2": ["11", "110", "1111", "0001", "100"],
+        "SPRR_PERM_EL0": ["11", "110", "1111", "0001", "101"],
+        "SPRR_PERM_EL1": ["11", "110", "1111", "0001", "110"],
+        "SPRR_PERM_EL2": ["11", "110", "1111", "0001", "111"],
+        "E_MMU_ERR_STS_EL1": ["11", "110", "1111", "0010", "000"],
+        "APGAKeyLo_EL12": ["11", "110", "1111", "0010", "001"],
+        "APGAKeyHi_EL12": ["11", "110", "1111", "0010", "010"],
+        "KERNELKEYLO_EL12": ["11", "110", "1111", "0010", "011"],
+        "KERNELKEYHI_EL12": ["11", "110", "1111", "0010", "100"],
+        "AFPCR_EL0": ["11", "110", "1111", "0010", "101"],
+        "AIDR2_EL1": ["11", "110", "1111", "0010", "111"],
+        "SPRR_UMASK0_EL1": ["11", "110", "1111", "0011", "000"],
+        "SPRR_KMASK0_EL1": ["11", "110", "1111", "0011", "001"],
+        "SPRR_KMASK0_EL2": ["11", "110", "1111", "0011", "010"],
+        "SPRR_UMASK1_EL1": ["11", "110", "1111", "0011", "011"],
+        "SPRR_UMASK2_EL1": ["11", "110", "1111", "0011", "100"],
+        "SPRR_UMASK3_EL1": ["11", "110", "1111", "0011", "101"],
+        "SPRR_KMASK1_EL1": ["11", "110", "1111", "0100", "010"],
+        "SPRR_KMASK2_EL1": ["11", "110", "1111", "0100", "011"],
+        "SPRR_KMASK3_EL1": ["11", "110", "1111", "0100", "100"],
+        "SPRR_KMASK1_EL2": ["11", "110", "1111", "0101", "001"],
+        "SPRR_KMASK2_EL2": ["11", "110", "1111", "0101", "010"],
+        "SPRR_KMASK3_EL2": ["11", "110", "1111", "0101", "011"],
+        "SPRR_KMASK0_EL12": ["11", "110", "1111", "0110", "000"],
+        "SPRR_KMASK1_EL12": ["11", "110", "1111", "0110", "001"],
+        "SPRR_KMASK2_EL12": ["11", "110", "1111", "0110", "010"],
+        "SPRR_KMASK3_EL12": ["11", "110", "1111", "0110", "011"],
+        "APIAKeyLo_EL12": ["11", "110", "1111", "0111", "000"],
+        "APIAKeyHi_EL12": ["11", "110", "1111", "0111", "001"],
+        "APIBKeyLo_EL12": ["11", "110", "1111", "0111", "010"],
+        "APIBKeyHi_EL12": ["11", "110", "1111", "0111", "011"],
+        "APDAKeyLo_EL12": ["11", "110", "1111", "0111", "100"],
+        "APDAKeyHi_EL12": ["11", "110", "1111", "0111", "101"],
+        "APDBKeyLo_EL12": ["11", "110", "1111", "0111", "110"],
+        "APDBKeyHi_EL12": ["11", "110", "1111", "0111", "111"],
+        "GXF_STATUS_EL1": ["11", "110", "1111", "1000", "000"],
+        "GXF_ENTER_EL1": ["11", "110", "1111", "1000", "001"],
+        "GXF_ABORT_EL1": ["11", "110", "1111", "1000", "010"],
+        "VBAR_GL12": ["11", "110", "1111", "1001", "010"],
+        "SPSR_GL12": ["11", "110", "1111", "1001", "011"],
+        "ASPSR_GL12": ["11", "110", "1111", "1001", "100"],
+        "ESR_GL12": ["11", "110", "1111", "1001", "101"],
+        "ELR_GL12": ["11", "110", "1111", "1001", "110"],
+        "SP_GL12": ["11", "110", "1111", "1010", "000"],
+        "TPIDR_GL1": ["11", "110", "1111", "1010", "001"],
+        "VBAR_GL1": ["11", "110", "1111", "1010", "010"],
+        "SPSR_GL1": ["11", "110", "1111", "1010", "011"],
+        "ASPSR_GL1": ["11", "110", "1111", "1010", "100"],
+        "ESR_GL1": ["11", "110", "1111", "1010", "101"],
+        "ELR_GL1": ["11", "110", "1111", "1010", "110"],
+        "FAR_GL1": ["11", "110", "1111", "1010", "111"],
+        "TPIDR_GL2": ["11", "110", "1111", "1011", "001"],
+        "VBAR_GL2": ["11", "110", "1111", "1011", "010"],
+        "SPSR_GL2": ["11", "110", "1111", "1011", "011"],
+        "ASPSR_GL2": ["11", "110", "1111", "1011", "100"],
+        "ESR_GL2": ["11", "110", "1111", "1011", "101"],
+        "ELR_GL2": ["11", "110", "1111", "1011", "110"],
+        "FAR_GL2": ["11", "110", "1111", "1011", "111"],
+        "GXF_ENTER_EL2": ["11", "110", "1111", "1100", "000"],
+        "GXF_ABORT_EL2": ["11", "110", "1111", "1100", "001"],
+        "APCTL_EL2": ["11", "110", "1111", "1100", "010"],
+        "APSTS_EL2_MAYBE": ["11", "110", "1111", "1100", "011"],
+        "APSTS_EL1": ["11", "110", "1111", "1100", "100"],
+        "SPRR_CONFIG_EL2": ["11", "110", "1111", "1110", "010"],
+        "SPRR_UNK1_EL2": ["11", "110", "1111", "1110", "011"],
+        "APVMKEYLO_EL2": ["11", "110", "1111", "1110", "100"],
+        "APVMKEYHI_EL2": ["11", "110", "1111", "1110", "101"],
+        "ACTLR_EL12": ["11", "110", "1111", "1110", "110"],
+        "APSTS_EL12": ["11", "110", "1111", "1110", "111"],
+        "APCTL_EL12": ["11", "110", "1111", "1111", "000"],
+        "GXF_CONFIG_EL12": ["11", "110", "1111", "1111", "001"],
+        "GXF_ENTER_EL12": ["11", "110", "1111", "1111", "010"],
+        "GXF_ABORT_EL12": ["11", "110", "1111", "1111", "011"],
+        "SPRR_CONFIG_EL12": ["11", "110", "1111", "1111", "100"],
+        "SPRR_UNK1_EL12": ["11", "110", "1111", "1111", "101"],
+        "SPRR_PERM_EL12": ["11", "110", "1111", "1111", "111"],
+        "UPMCR0_EL1": ["11", "111", "1111", "0000", "100"],
+        "UPMESR0_EL1": ["11", "111", "1111", "0001", "100"],
+        "UPMECM0_EL1": ["11", "111", "1111", "0011", "100"],
+        "UPMECM1_EL1": ["11", "111", "1111", "0100", "100"],
+        "UPMPCM_EL1": ["11", "111", "1111", "0101", "100"],
+        "UPMSR_EL1": ["11", "111", "1111", "0110", "100"],
+        "UPMECM2_EL1": ["11", "111", "1111", "1000", "101"],
+        "UPMECM3_EL1": ["11", "111", "1111", "1001", "101"],
+        "UPMESR1_EL1": ["11", "111", "1111", "1011", "101"],
+        "UPMC0_EL1": ["11", "111", "1111", "0111", "100"],
+        "UPMC1_EL1": ["11", "111", "1111", "1000", "100"],
+        "UPMC2_EL1": ["11", "111", "1111", "1001", "100"],
+        "UPMC3_EL1": ["11", "111", "1111", "1010", "100"],
+        "UPMC4_EL1": ["11", "111", "1111", "1011", "100"],
+        "UPMC5_EL1": ["11", "111", "1111", "1100", "100"],
+        "UPMC6_EL1": ["11", "111", "1111", "1101", "100"],
+        "UPMC7_EL1": ["11", "111", "1111", "1110", "100"],
+        "UPMC8_EL1": ["11", "111", "1111", "0000", "101"],
+        "UPMC9_EL1": ["11", "111", "1111", "0001", "101"],
+        "UPMC10_EL1": ["11", "111", "1111", "0010", "101"],
+        "UPMC11_EL1": ["11", "111", "1111", "0011", "101"],
+        "UPMC12_EL1": ["11", "111", "1111", "0100", "101"],
+        "UPMC13_EL1": ["11", "111", "1111", "0101", "101"],
+        "UPMC14_EL1": ["11", "111", "1111", "0110", "101"],
+        "UPMC15_EL1": ["11", "111", "1111", "0111", "101"],
+        "HACR_EL2": ["11", "100", "0001", "0001", "111"],
         "S3_<op1>_<Cn>_<Cm>_<op2>": ["11", "xxx", "1x11", "xxxx", "xxx"],
         "SCR_EL3": ["11", "110", "0001", "0001", "000"],
         "SCTLR_EL1": ["11", "000", "0001", "0000", "000"],
@@ -14365,6 +14570,826 @@
       "ZCR_EL3": {
         "long_name": "SVE Control Register for EL3",
         "purpose": "The SVE Control Register for EL3 is used to control aspects of SVE visible at\nall Exception levels.\n\nLEN, bits [0:3] - Constrains the scalable vector register length for all\n                  Exception levels to (LEN+1)x128 bits. For all purposes other\n                  than returning the result of a direct read of ZCR_EL3 then\n                  this field behaves as if rounded down to the nearest\n                  implemented vector length. An indirect read of ZCR_EL3.LEN\n                  appears to occur in program order relative to a direct write\n                  of the same register, without the need for explicit\n                  synchronization."
+      },
+      "HID0_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 0",
+        "purpose": ""
+      },
+      "EHID0_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 0 (E-core)",
+        "purpose": ""
+      },
+      "HID1_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 1",
+        "purpose": ""
+      },
+      "EHID1_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 1 (E-core)",
+        "purpose": ""
+      },
+      "HID2_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 2",
+        "purpose": ""
+      },
+      "EHID2_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 2 (E-core)",
+        "purpose": ""
+      },
+      "HID3_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 3",
+        "purpose": ""
+      },
+      "EHID3_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 3 (E-core)",
+        "purpose": ""
+      },
+      "HID4_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 4",
+        "purpose": ""
+      },
+      "EHID4_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 4 (E-core)",
+        "purpose": ""
+      },
+      "HID5_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 5",
+        "purpose": ""
+      },
+      "EHID5_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 5 (E-core)",
+        "purpose": ""
+      },
+      "HID6_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 6",
+        "purpose": ""
+      },
+      "HID7_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 7",
+        "purpose": ""
+      },
+      "EHID7_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 7 (E-core)",
+        "purpose": ""
+      },
+      "HID8_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 8",
+        "purpose": ""
+      },
+      "HID9_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 9",
+        "purpose": ""
+      },
+      "EHID9_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 9 (E-core)",
+        "purpose": ""
+      },
+      "HID10_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 10",
+        "purpose": ""
+      },
+      "EHID10_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 10 (E-core)",
+        "purpose": ""
+      },
+      "HID11_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 11",
+        "purpose": ""
+      },
+      "EHID11_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 11 (E-core)",
+        "purpose": ""
+      },
+      "HID13_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 13",
+        "purpose": ""
+      },
+      "HID14_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 14",
+        "purpose": ""
+      },
+      "HID16_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 16",
+        "purpose": ""
+      },
+      "HID17_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 17",
+        "purpose": ""
+      },
+      "HID18_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 18",
+        "purpose": ""
+      },
+      "EHID20_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 20 (E-core)",
+        "purpose": ""
+      },
+      "HID21_EL1": {
+        "long_name": "Hardware Implementation-Dependent Register 21",
+        "purpose": ""
+      },
+      "PMCR0_EL1": {
+        "long_name": "Performance Monitor Control Register 0",
+        "purpose": ""
+      },
+      "PMCR1_EL1": {
+        "long_name": "Performance Monitor Control Register 1",
+        "purpose": ""
+      },
+      "PMCR2_EL1": {
+        "long_name": "Performance Monitor Control Register 2",
+        "purpose": ""
+      },
+      "PMCR3_EL1": {
+        "long_name": "Performance Monitor Control Register 3",
+        "purpose": ""
+      },
+      "PMCR4_EL1": {
+        "long_name": "Performance Monitor Control Register 4",
+        "purpose": ""
+      },
+      "PMESR0_EL1": {
+        "long_name": "Performance Monitor Event Selection Register 0",
+        "purpose": ""
+      },
+      "PMESR1_EL1": {
+        "long_name": "Performance Monitor Event Selection Register 1",
+        "purpose": ""
+      },
+      "PMSR_EL1": {
+        "long_name": "Performance Monitor Status Register",
+        "purpose": ""
+      },
+      "PMC0_EL1": {
+        "long_name": "Performance Monitor Counter 0",
+        "purpose": ""
+      },
+      "PMC1_EL1": {
+        "long_name": "Performance Monitor Counter 1",
+        "purpose": ""
+      },
+      "PMC2_EL1": {
+        "long_name": "Performance Monitor Counter 2",
+        "purpose": ""
+      },
+      "PMC3_EL1": {
+        "long_name": "Performance Monitor Counter 3",
+        "purpose": ""
+      },
+      "PMC4_EL1": {
+        "long_name": "Performance Monitor Counter 4",
+        "purpose": ""
+      },
+      "PMC5_EL1": {
+        "long_name": "Performance Monitor Counter 5",
+        "purpose": ""
+      },
+      "PMC6_EL1": {
+        "long_name": "Performance Monitor Counter 6",
+        "purpose": ""
+      },
+      "PMC7_EL1": {
+        "long_name": "Performance Monitor Counter 7",
+        "purpose": ""
+      },
+      "PMC8_EL1": {
+        "long_name": "Performance Monitor Counter 8",
+        "purpose": ""
+      },
+      "PMC9_EL1": {
+        "long_name": "Performance Monitor Counter 9",
+        "purpose": ""
+      },
+      "LSU_ERR_STS_EL1": {
+        "long_name": "Load-Store Unit Error Status",
+        "purpose": ""
+      },
+      "E_LSU_ERR_STS_EL1": {
+        "long_name": "Load-Store Unit Error Status (E-core)",
+        "purpose": ""
+      },
+      "LSU_ERR_CTL_EL1": {
+        "long_name": "Load-Store Unit Error Control",
+        "purpose": ""
+      },
+      "L2C_ERR_STS_EL1": {
+        "long_name": "L2 Cache Error Status",
+        "purpose": ""
+      },
+      "L2C_ERR_ADR_EL1": {
+        "long_name": "L2 Cache Address",
+        "purpose": ""
+      },
+      "L2C_ERR_INF_EL1": {
+        "long_name": "L2 Cache Error Information",
+        "purpose": ""
+      },
+      "FED_ERR_STS_EL1": {
+        "long_name": "FED Error Status",
+        "purpose": ""
+      },
+      "E_FED_ERR_STS_EL1": {
+        "long_name": "FED Error Status (E-Core)",
+        "purpose": ""
+      },
+      "APCTL_EL1": {
+        "long_name": "Pointer Authentication Control",
+        "purpose": ""
+      },
+      "KERNELKEYLO_EL1": {
+        "long_name": "Pointer Authentication Kernel Key Low",
+        "purpose": ""
+      },
+      "KERNELKEYHI_EL1": {
+        "long_name": "Pointer Authentication Kernel Key High",
+        "purpose": ""
+      },
+      "VMSA_LOCK_EL1": {
+        "long_name": "Virtual Memory System Architecture Lock",
+        "purpose": ""
+      },
+      "AMX_CTL_EL1": {
+        "long_name": "AMX Control (EL1)",
+        "purpose": ""
+      },
+      "APRR_EL0": {
+        "long_name": "APRR EL0",
+        "purpose": ""
+      },
+      "APRR_EL1": {
+        "long_name": "APRR EL1",
+        "purpose": ""
+      },
+      "CTRR_LOCK_EL1": {
+        "long_name": "CTRR Lock",
+        "purpose": ""
+      },
+      "CTRR_A_LWR_EL1": {
+        "long_name": "CTRR A Lower Address (EL1)",
+        "purpose": ""
+      },
+      "CTRR_A_UPR_EL1": {
+        "long_name": "CTRR A Upper Address (EL1)",
+        "purpose": ""
+      },
+      "CTRR_CTL_EL1": {
+        "long_name": "CTRR Control (EL1)",
+        "purpose": ""
+      },
+      "APRR_JIT_ENABLE_EL2": {
+        "long_name": "APRR JIT Enable",
+        "purpose": ""
+      },
+      "APRR_JIT_MASK_EL2": {
+        "long_name": "APRR JIT Mask",
+        "purpose": ""
+      },
+      "AMX_CTL_EL12": {
+        "long_name": "AMX Control (EL12)",
+        "purpose": ""
+      },
+      "AMX_CTL_EL2": {
+        "long_name": "AMX Control (EL2)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL20_SILLY_THING": {
+        "long_name": "SPRR Permission Configuration Register (EL20, useless)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL02": {
+        "long_name": "SPRR Permission Configuration Register (EL02)",
+        "purpose": ""
+      },
+      "SPRR_KMASK0_EL12": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 0 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_UMASK0_EL2": {
+        "long_name": "SPRR Permission Unlock Mask 0 (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UMASK1_EL2": {
+        "long_name": "SPRR Permission Unlock Mask 1 (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UMASK2_EL2": {
+        "long_name": "SPRR Permission Unlock Mask 2 (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UMASK3_EL2": {
+        "long_name": "SPRR Permission Unlock Mask 3 (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UMASK0_EL12": {
+        "long_name": "SPRR Permission Unlock Mask 0 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_UMASK1_EL12": {
+        "long_name": "SPRR Permission Unlock Mask 1 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_UMASK2_EL12": {
+        "long_name": "SPRR Permission Unlock Mask 2 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_UMASK3_EL12": {
+        "long_name": "SPRR Permission Unlock Mask 3 (EL12)",
+        "purpose": ""
+      },
+      "CNTPCT_ALIAS_EL0": {
+        "long_name": "Physical timer counter register",
+        "purpose": ""
+      },
+      "CNTVCT_ALIAS_EL0": {
+        "long_name": "Virtual timer counter register",
+        "purpose": ""
+      },
+      "CTRR_A_LWR_EL2": {
+        "long_name": "CTRR A Lower Address (EL2)",
+        "purpose": ""
+      },
+      "CTRR_A_UPR_EL2": {
+        "long_name": "CTRR A Upper Address (EL2)",
+        "purpose": ""
+      },
+      "CTRR_CTL_EL2": {
+        "long_name": "CTRR Control (EL2)",
+        "purpose": ""
+      },
+      "CTRR_LOCK_EL2": {
+        "long_name": "CTRR Lock",
+        "purpose": ""
+      },
+      "IPI_RR_LOCAL_EL1": {
+        "long_name": "IPI Request Register (Local)",
+        "purpose": ""
+      },
+      "IPI_RR_GLOBAL_EL1": {
+        "long_name": "IPI Request Register (Global)",
+        "purpose": ""
+      },
+      "DPC_ERR_STS_EL1": {
+        "long_name": "DPC Error Status",
+        "purpose": ""
+      },
+      "IPI_SR_EL1": {
+        "long_name": "IPI Status Register",
+        "purpose": ""
+      },
+      "VM_TMR_LR_EL2": {
+        "long_name": "VM Timer Link Register",
+        "purpose": ""
+      },
+      "VM_TMR_FIQ_ENA_EL2": {
+        "long_name": "VM Timer FIQ Enable",
+        "purpose": ""
+      },
+      "IPI_CR_EL1": {
+        "long_name": "IPI Control Register",
+        "purpose": ""
+      },
+      "ACC_CFG_EL1": {
+        "long_name": "Apple Core Cluster Configuration",
+        "purpose": ""
+      },
+      "CYC_OVRD_EL1": {
+        "long_name": "Cyclone Override",
+        "purpose": ""
+      },
+      "ACC_OVRD_EL1": {
+        "long_name": "Apple Core Cluster Override",
+        "purpose": ""
+      },
+      "ACC_EBLK_OVRD_EL1": {
+        "long_name": "Apple Core Cluster E-Block Override",
+        "purpose": ""
+      },
+      "MMU_ERR_STS_EL1": {
+        "long_name": "MMU Error Status",
+        "purpose": ""
+      },
+      "AFSR1_GL1": {
+        "long_name": "Auxiliary Fault Status Register 1 (GL1)",
+        "purpose": ""
+      },
+      "AFSR1_GL2": {
+        "long_name": "Auxiliary Fault Status Register 1 (GL2)",
+        "purpose": ""
+      },
+      "AFSR1_GL12": {
+        "long_name": "Auxiliary Fault Status Register 1 (GL12)",
+        "purpose": ""
+      },
+      "SPRR_CONFIG_EL1": {
+        "long_name": "SPRR Configuration Register (EL1)",
+        "purpose": ""
+      },
+      "GXF_CONFIG_EL1": {
+        "long_name": "GXF Configuration Register (EL1)",
+        "purpose": ""
+      },
+      "SPRR_UNK1_EL1": {
+        "long_name": "SPRR Unknown (EL1)",
+        "purpose": ""
+      },
+      "GXF_CONFIG_EL2": {
+        "long_name": "GXF Configuration Register (EL2)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL0": {
+        "long_name": "SPRR Permission Configuration Register (EL0)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL1": {
+        "long_name": "SPRR Permission Configuration Register (EL1)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL2": {
+        "long_name": "SPRR Permission Configuration Register (EL2)",
+        "purpose": ""
+      },
+      "E_MMU_ERR_STS_EL1": {
+        "long_name": "MMU Error Status (E-Core)",
+        "purpose": ""
+      },
+      "APGAKeyLo_EL12": {
+        "long_name": "Pointer Authentication Key A for Code Low (EL12)",
+        "purpose": ""
+      },
+      "APGAKeyHi_EL12": {
+        "long_name": "Pointer Authentication Key A for Code High (EL12)",
+        "purpose": ""
+      },
+      "KERNELKEYLO_EL12": {
+        "long_name": "Pointer Authentication Kernel Key Low (EL12)",
+        "purpose": ""
+      },
+      "KERNELKEYHI_EL12": {
+        "long_name": "Pointer Authentication Kernel Key High (EL12)",
+        "purpose": ""
+      },
+      "AFPCR_EL0": {
+        "long_name": "Apple Floating-Point Control Register",
+        "purpose": ""
+      },
+      "AIDR2_EL1": {
+        "long_name": "Apple ID Register 2",
+        "purpose": ""
+      },
+      "SPRR_UMASK0_EL1": {
+        "long_name": "SPRR Permission Unlock Mask 0 (EL1)",
+        "purpose": ""
+      },
+      "SPRR_KMASK0_EL1": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 0 (EL1)",
+        "purpose": ""
+      },
+      "SPRR_KMASK0_EL2": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 0 (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UMASK1_EL1": {
+        "long_name": "SPRR Permission Unlock Mask 1 (EL1)",
+        "purpose": ""
+      },
+      "SPRR_UMASK2_EL1": {
+        "long_name": "SPRR Permission Unlock Mask 2 (EL1)",
+        "purpose": ""
+      },
+      "SPRR_UMASK3_EL1": {
+        "long_name": "SPRR Permission Unlock Mask 3 (EL1)",
+        "purpose": ""
+      },
+      "SPRR_KMASK1_EL1": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 1 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK2_EL1": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 2 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK3_EL1": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 3 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK1_EL2": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 1 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK2_EL2": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 2 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK3_EL2": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 3 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK1_EL12": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 1 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK2_EL12": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 2 (EL12)",
+        "purpose": ""
+      },
+      "SPRR_KMASK3_EL12": {
+        "long_name": "SPRR Kernel Permission Unlock Mask 3 (EL12)",
+        "purpose": ""
+      },
+      "APIAKeyLo_EL12": {
+        "long_name": "Pointer Authentication Key A for Instruction Low (EL12)",
+        "purpose": ""
+      },
+      "APIAKeyHi_EL12": {
+        "long_name": "Pointer Authentication Key A for Instruction High (EL12)",
+        "purpose": ""
+      },
+      "APIBKeyLo_EL12": {
+        "long_name": "Pointer Authentication Key A for Instruction Low (EL12)",
+        "purpose": ""
+      },
+      "APIBKeyHi_EL12": {
+        "long_name": "Pointer Authentication Key A for Instruction High (EL12)",
+        "purpose": ""
+      },
+      "APDAKeyLo_EL12": {
+        "long_name": "Pointer Authentication Key A for Data Low (EL12)",
+        "purpose": ""
+      },
+      "APDAKeyHi_EL12": {
+        "long_name": "Pointer Authentication Key A for Data High (EL12)",
+        "purpose": ""
+      },
+      "APDBKeyLo_EL12": {
+        "long_name": "Pointer Authentication Key A for Data Low (EL12)",
+        "purpose": ""
+      },
+      "APDBKeyHi_EL12": {
+        "long_name": "Pointer Authentication Key A for Data High (EL12)",
+        "purpose": ""
+      },
+      "GXF_STATUS_EL1": {
+        "long_name": "GXF Status Register",
+        "purpose": ""
+      },
+      "GXF_ENTER_EL1": {
+        "long_name": "GXF genter Entry Vector Register (EL1)",
+        "purpose": ""
+      },
+      "GXF_ABORT_EL1": {
+        "long_name": "GXF Abort Vector Register (EL1)",
+        "purpose": ""
+      },
+      "VBAR_GL12": {
+        "long_name": "Vector Base Address Register (GL12)",
+        "purpose": ""
+      },
+      "SPSR_GL12": {
+        "long_name": "Saved Program Status Register (GL12)",
+        "purpose": ""
+      },
+      "ASPSR_GL12": {
+        "long_name": "ASPSR (GL12)",
+        "purpose": ""
+      },
+      "ESR_GL12": {
+        "long_name": "Exception Syndrome Register (GL12)",
+        "purpose": ""
+      },
+      "ELR_GL12": {
+        "long_name": "Exception Link Register (GL12)",
+        "purpose": ""
+      },
+      "SP_GL12": {
+        "long_name": "Stack Pointer Register (GL12)",
+        "purpose": ""
+      },
+      "TPIDR_GL1": {
+        "long_name": "Software Thread ID Register (GL1)",
+        "purpose": ""
+      },
+      "VBAR_GL1": {
+        "long_name": "Vector Base Address Register (GL1)",
+        "purpose": ""
+      },
+      "SPSR_GL1": {
+        "long_name": "Saved Program Status Register (GL1)",
+        "purpose": ""
+      },
+      "ASPSR_GL1": {
+        "long_name": "ASPSR (GL1)",
+        "purpose": ""
+      },
+      "ESR_GL1": {
+        "long_name": "Exception Syndrome Register (GL1)",
+        "purpose": ""
+      },
+      "ELR_GL1": {
+        "long_name": "Exception Link Register (GL1)",
+        "purpose": ""
+      },
+      "FAR_GL1": {
+        "long_name": "Fault Address Register (GL1)",
+        "purpose": ""
+      },
+      "TPIDR_GL2": {
+        "long_name": "Software Thread ID Register (GL2)",
+        "purpose": ""
+      },
+      "VBAR_GL2": {
+        "long_name": "Vector Base Address Register (GL2)",
+        "purpose": ""
+      },
+      "SPSR_GL2": {
+        "long_name": "Saved Program Status Register (GL2)",
+        "purpose": ""
+      },
+      "ASPSR_GL2": {
+        "long_name": "ASPSR (GL2)",
+        "purpose": ""
+      },
+      "ESR_GL2": {
+        "long_name": "Exception Syndrome Register (GL2)",
+        "purpose": ""
+      },
+      "ELR_GL2": {
+        "long_name": "Exception Link Register (GL2)",
+        "purpose": ""
+      },
+      "FAR_GL2": {
+        "long_name": "Fault Address Register (GL2)",
+        "purpose": ""
+      },
+      "GXF_ENTER_EL2": {
+        "long_name": "GXF genter Entry Vector Register (EL2)",
+        "purpose": ""
+      },
+      "GXF_ABORT_EL2": {
+        "long_name": "GXF Abort Vector Register (EL2)",
+        "purpose": ""
+      },
+      "APCTL_EL2": {
+        "long_name": "Pointer Authentication Control (EL2)",
+        "purpose": ""
+      },
+      "APSTS_EL2_MAYBE": {
+        "long_name": "Pointer Authentication Status (EL2, maybe)",
+        "purpose": ""
+      },
+      "APSTS_EL1": {
+        "long_name": "Pointer Authentication Status",
+        "purpose": ""
+      },
+      "SPRR_CONFIG_EL2": {
+        "long_name": "SPRR Configuration Register (EL2)",
+        "purpose": ""
+      },
+      "SPRR_UNK1_EL2": {
+        "long_name": "SPRR Unknown (EL2)",
+        "purpose": ""
+      },
+      "APVMKEYLO_EL2": {
+        "long_name": "Pointer Authentication VM Machine Key Low",
+        "purpose": ""
+      },
+      "APVMKEYHI_EL2": {
+        "long_name": "Pointer Authentication VM Machine Key High",
+        "purpose": ""
+      },
+      "ACTLR_EL12": {
+        "long_name": "Auxiliary Control Register (EL12)",
+        "purpose": ""
+      },
+      "APSTS_EL12": {
+        "long_name": "Pointer Authentication Status (EL12)",
+        "purpose": ""
+      },
+      "APCTL_EL12": {
+        "long_name": "Pointer Authentication Control (EL12)",
+        "purpose": ""
+      },
+      "GXF_CONFIG_EL12": {
+        "long_name": "GXF Configuration Register (EL12)",
+        "purpose": ""
+      },
+      "GXF_ENTER_EL12": {
+        "long_name": "GXF genter Entry Vector Register (EL12)",
+        "purpose": ""
+      },
+      "GXF_ABORT_EL12": {
+        "long_name": "GXF Abort Vector Register (EL12)",
+        "purpose": ""
+      },
+      "SPRR_CONFIG_EL12": {
+        "long_name": "SPRR Configuration Register (EL12)",
+        "purpose": ""
+      },
+      "SPRR_UNK1_EL12": {
+        "long_name": "SPRR Unknown (EL2)",
+        "purpose": ""
+      },
+      "SPRR_PERM_EL12": {
+        "long_name": "SPRR Permission Configuration Register (EL12)",
+        "purpose": ""
+      },
+      "UPMCR0_EL1": {
+        "long_name": "Uncore Performance Monitor Control Register 0",
+        "purpose": ""
+      },
+      "UPMESR0_EL1": {
+        "long_name": "Uncore Performance Monitor Event Selection Register 0",
+        "purpose": ""
+      },
+      "UPMECM0_EL1": {
+        "long_name": "Uncore Performance Monitor Event Core Mask 0",
+        "purpose": ""
+      },
+      "UPMECM1_EL1": {
+        "long_name": "Uncore Performance Monitor Event Core Mask 1",
+        "purpose": ""
+      },
+      "UPMPCM_EL1": {
+        "long_name": "Uncore Performance Monitor PMI Core Mask",
+        "purpose": ""
+      },
+      "UPMSR_EL1": {
+        "long_name": "Uncore Performance Monitor Status Register",
+        "purpose": ""
+      },
+      "UPMECM2_EL1": {
+        "long_name": "Uncore Performance Monitor Event Core Mask 2",
+        "purpose": ""
+      },
+      "UPMECM3_EL1": {
+        "long_name": "Uncore Performance Monitor Event Core Mask 3",
+        "purpose": ""
+      },
+      "UPMESR1_EL1": {
+        "long_name": "Uncore Performance Monitor Event Selection Register 1",
+        "purpose": ""
+      },
+      "UPMC0_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 0",
+        "purpose": ""
+      },
+      "UPMC1_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 1",
+        "purpose": ""
+      },
+      "UPMC2_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 2",
+        "purpose": ""
+      },
+      "UPMC3_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 3",
+        "purpose": ""
+      },
+      "UPMC4_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 4",
+        "purpose": ""
+      },
+      "UPMC5_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 5",
+        "purpose": ""
+      },
+      "UPMC6_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 6",
+        "purpose": ""
+      },
+      "UPMC7_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 7",
+        "purpose": ""
+      },
+      "UPMC8_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 8",
+        "purpose": ""
+      },
+      "UPMC9_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 9",
+        "purpose": ""
+      },
+      "UPMC10_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 10",
+        "purpose": ""
+      },
+      "UPMC11_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 11",
+        "purpose": ""
+      },
+      "UPMC12_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 12",
+        "purpose": ""
+      },
+      "UPMC13_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 13",
+        "purpose": ""
+      },
+      "UPMC14_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 14",
+        "purpose": ""
+      },
+      "UPMC15_EL1": {
+        "long_name": "Uncore Performance Monitor Counter 15",
+        "purpose": ""
       }
     }
   }
