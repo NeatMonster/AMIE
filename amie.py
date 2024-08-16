@@ -5,9 +5,11 @@ import re
 import struct
 import sys
 
+import idaapi
 import ida_allins
 import ida_bytes
 import ida_hexrays
+import ida_ida
 import ida_idaapi
 import ida_idp
 import ida_kernwin
@@ -314,8 +316,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
         self.hexrays_support = False
 
     def init(self):
-        info = ida_idaapi.get_inf_structure()
-        if info.procName != "ARM":
+        if idaapi.ph_get_id() != idaapi.PLFM_ARM:
             return ida_idaapi.PLUGIN_SKIP
 
         ida_kernwin.UI_Hooks.hook(self)
@@ -335,8 +336,7 @@ class AMIE(ida_idaapi.plugin_t, ida_idp.IDP_Hooks, ida_kernwin.UI_Hooks):
         return False
 
     def database_inited(self, *_):
-        info = ida_idaapi.get_inf_structure()
-        if info.is_64bit():
+        if ida_ida.inf_is_64bit():
             print("[AMIE] Using AArch64 architecture")
             self.arch = AArch64()
         else:
